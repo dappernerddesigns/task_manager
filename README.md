@@ -37,7 +37,7 @@ A bash script has been added to the repo that will take care of setting up both 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/todo-app.git
+git clone https://github.com/dappernerddesigns/task_manager.git
 cd todo-app
 ```
 
@@ -102,7 +102,3 @@ Once running:
 | DELETE | `/api/todos/:id` | Delete a task     |
 
 ---
-
-## 📄 License
-
-MIT — [Do what you want](https://choosealicense.com/licenses/mit/), just don’t forget to give credit 😄
