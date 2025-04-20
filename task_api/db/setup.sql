@@ -1,0 +1,7 @@
+DROP DATABASE IF EXISTS tasks_test;
+
+CREATE DATABASE tasks_test;
+
+DROP DATABASE IF EXISTS tasks;
+
+CREATE DATABASE tasks;

@@ -1,0 +1,79 @@
+{
+  "GET /api": {
+    "description": "Serves up a json representation of all the available endpoints of the api"
+  },
+  "GET /api/tasks": {
+    "description": "Serves an array of all tasks",
+    "queries": ["status", "sorted_by=due"],
+    "exampleResponse": {
+      "tasks": [
+        {
+          "id": 1,
+          "title": "ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper",
+          "description": "odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor",
+          "status": "todo",
+          "due": "2024-12-05T05:39:44.000Z"
+        },
+        {
+          "id": 2,
+          "title": "maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum",
+          "description": "amet consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non",
+          "status": "todo",
+          "due": "2024-11-07T05:31:46.000Z"
+        }
+      ]
+    }
+  },
+  "POST /api/tasks": {
+    "description": "Serves the newly added comment",
+    "options": {
+      "title": { "type": "string", "mandatory": true },
+      "description": { "type": "string", "mandatory": false },
+      "status": { "type": "string", "mandatory": true },
+      "due": { "type": "SQL DateTime", "mandatory": true }
+    },
+    "exampleResponse": {
+      "task": {
+        "id": 25,
+        "title": "Mop the floors",
+        "description": "",
+        "status": "todo",
+        "due": "2024-12-05T05:39:44.000Z"
+      }
+    }
+  },
+  "GET /api/tasks/:id": {
+    "description": "Serves the requested task",
+    "exampleResponse": {
+      "task": {
+        "id": 1,
+        "title": "ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper",
+        "description": "odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor",
+        "status": "todo",
+        "due": "2024-12-05T05:39:44.000Z"
+      }
+    }
+  },
+  "PATCH /api/tasks/:id": {
+    "description": "Serves the updated comment",
+    "options": {
+      "title": { "editable": true },
+      "description": { "editable": true },
+      "status": { "editable": true },
+      "due": { "editable": true }
+    },
+    "exampleResponse": {
+      "task": {
+        "id": 25,
+        "title": "Mop the floors",
+        "description": "",
+        "status": "doing",
+        "due": "2024-12-05T05:39:44.000Z"
+      }
+    }
+  },
+  "DELETE /api/tasks/:id": {
+    "description": "Removes the specified task",
+    "exampleResponse": {}
+  }
+}
